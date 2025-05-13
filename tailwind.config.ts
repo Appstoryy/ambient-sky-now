@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -61,7 +62,28 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
-				}
+				},
+				// Weather condition-based colors
+				sunny: {
+					DEFAULT: '#FFB830',
+					dark: '#FF9E00',
+				},
+				cloudy: {
+					DEFAULT: '#54B9ED',
+					dark: '#0078C1',
+				},
+				rainy: {
+					DEFAULT: '#36A6E0',
+					dark: '#1A73B8',
+				},
+				stormy: {
+					DEFAULT: '#505A75',
+					dark: '#2D3446',
+				},
+				night: {
+					DEFAULT: '#192359',
+					dark: '#0F132D',
+				},
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
@@ -84,11 +106,21 @@ export default {
 					to: {
 						height: '0'
 					}
+				},
+				'float': {
+					'0%, 100%': { transform: 'translateY(0)' },
+					'50%': { transform: 'translateY(-5px)' },
+				},
+				'pulse-slow': {
+					'0%, 100%': { opacity: '1' },
+					'50%': { opacity: '0.8' },
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'float': 'float 6s ease-in-out infinite',
+				'pulse-slow': 'pulse-slow 4s ease-in-out infinite',
 			}
 		}
 	},
