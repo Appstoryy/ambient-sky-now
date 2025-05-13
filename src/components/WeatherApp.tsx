@@ -6,6 +6,7 @@ import CurrentWeather from './CurrentWeather';
 import DailyForecast from './DailyForecast';
 import HourlyForecast from './HourlyForecast';
 import LocationSearch from './LocationSearch';
+import WeatherAnimation from './WeatherAnimation';
 import { toast } from "@/components/ui/sonner";
 
 const WeatherApp: React.FC = () => {
@@ -53,6 +54,13 @@ const WeatherApp: React.FC = () => {
 
   return (
     <div className={`min-h-screen ${backgroundClass} text-white p-4 md:p-8`}>
+      {weatherData && (
+        <WeatherAnimation 
+          condition={weatherData.current.condition}
+          timeOfDay={weatherData.current.timeOfDay}
+        />
+      )}
+      
       <div className="max-w-md mx-auto">
         {loading ? (
           <div className="flex flex-col items-center justify-center min-h-screen">
